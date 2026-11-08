@@ -7,3 +7,19 @@
 
 @media(max-width:900px){.download-grid{grid-template-columns:1fr}.download-card{padding:22px}.download-controls{margin-top:18px}}
 @media(max-width:480px){.download-card{padding:20px 18px}.download-card-header{gap:11px}.platform-icon{width:26px;height:26px}.download-platform h3{font-size:19px}.download-platform p{font-size:12px}.version{font-size:11px}.download-controls{flex-direction:column;align-items:stretch;gap:10px}.download-button{flex:auto;width:100%;justify-content:center;gap:10px}.download-card small{font-size:11px}.download-footnote{font-size:12px;line-height:1.8}}
+
+/* Shared package picker: light surface, orange selection, restrained type. */
+.package-picker{position:relative;min-width:0}
+.package-trigger{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-width:0;height:44px;padding:10px 12px;background:#fff;border:1px solid #dedee6;border-radius:7px;text-align:left;font-size:13px;line-height:1.5;font-weight:450;transition:border-color .15s,box-shadow .15s}
+.package-value{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.package-trigger>.icon{width:17px;height:17px;color:var(--muted);transition:transform .15s}
+.package-trigger:hover{border-color:#c5c5cf}
+.package-picker[data-open]>.package-trigger{border-color:#e6a16c;box-shadow:0 0 0 3px #ff7a0010}
+.package-picker[data-open]>.package-trigger>.icon{transform:rotate(180deg);color:var(--orange)}
+.package-menu{position:absolute;top:calc(100% + 7px);left:0;right:0;z-index:10;padding:5px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px #25212b12,0 2px 6px #25212b05;max-height:240px;overflow-y:auto;overscroll-behavior:contain}
+.package-option{position:relative;display:flex;align-items:center;min-height:42px;padding:10px 32px 10px 10px;border-radius:6px;cursor:pointer;font-size:13px;line-height:1.5;font-weight:400;overflow-wrap:anywhere}
+.package-option.is-active{background:var(--soft)}
+.package-option[aria-selected=true]{color:var(--orange);background:#fff3e9;font-weight:550}
+.package-option[aria-selected=true]:after{content:"";position:absolute;right:13px;width:5px;height:9px;border:solid currentColor;border-width:0 1.6px 1.6px 0;transform:rotate(45deg) translateY(-1px)}
+.download-card:has(.package-picker[data-open]){position:relative;z-index:11}
+@media(prefers-reduced-motion:reduce){.package-trigger,.package-trigger>.icon{transition:none}}
