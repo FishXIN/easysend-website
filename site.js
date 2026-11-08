@@ -25,7 +25,7 @@ const releaseRoot = 'https://github.com/FishXIN/easysend-website/releases/downlo
 for (const select of document.querySelectorAll('select[data-platform]')) {
   select.addEventListener('change', () => {
     const platform = select.dataset.platform;
-    const version = ['macos', 'android'].includes(platform) ? '1.18.5' : '1.18.4';
+    const version = platform === 'linux' ? '1.18.4' : '1.18.6';
     const option = select.value;
     let file, label;
     if (platform === 'macos') { file = `macos-${option}.dmg`; label = 'DMG'; }
