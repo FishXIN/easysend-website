@@ -1,0 +1,9 @@
+{
+  "repository": "https://github.com/localsend/localsend.git",
+  "commit": "92e133aa43869e94d394fd04fa70c50a0f796a64",
+  "license": "Apache-2.0",
+  "flutter": "3.41.9",
+  "rust": "1.97.1",
+  "scope": "Private Chuansong fork; not an official LocalSend release",
+  "crossNetworkStatus": "Not integrated; upstream WebRTC remains disabled"
+}
